@@ -1,0 +1,28 @@
+{
+  "name": "sistema-oficina-automotiva",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/nathan-santoss/sistema-oficina-automotiva#readme",
+  "bugs": {
+    "url": "https://github.com/nathan-santoss/sistema-oficina-automotiva/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathan-santoss/sistema-oficina-automotiva.git"
+  },
+  "license": "ISC",
+  "author": "nathan-santos",
+  "type": "module",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron src/main.js",
+    "dev": "electronmon src/main.js"
+  },
+  "dependencies": {
+    "electron": "^39.2.6"
+  },
+  "devDependencies": {
+    "electronmon": "^2.0.4"
+  }
+}
