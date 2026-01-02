@@ -43,8 +43,11 @@ const formsWindow = (tipo) => {
         }
     })
 
-    win.removeMenu()
-    win.loadFile(tipo)
+    novaJanela.removeMenu()
+    novaJanela.maximize()
+    novaJanela.webContents.openDevTools()
+
+    novaJanela.loadFile(tipo)
 }
 
 app.whenReady().then(() => {
@@ -82,4 +85,8 @@ ipcMain.on('new-Window', (event, destino) => {
     if(destino === 'novo-cliente'){
         formsWindow(cadastro_page)
     }
+})
+// fechar cadastro >>>>>>>
+ipcMain.on('close-cad', (event) => {
+    novaJanela.close()
 })
