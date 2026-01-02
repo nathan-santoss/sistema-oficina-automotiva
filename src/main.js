@@ -55,38 +55,3 @@ app.whenReady().then(() => {
     criarJanela()
 })
 
-//função para salvar e atualizar novos clientes
-
-const salvarDados = (destino, array) => {
-    try{
-        const fileJSON = JSON.stringify(array, null, 2)
-        fs.writeFileSync(destino, fileJSON, 'utf-8')
-    }catch(e){
-        console.error(`(Linha 33 - main.js) FALHA em salvar novos dados: ${e}`)
-    }
-}
-const uptade_clients = (localSaves, array) => {
-    try{
-        const fileString = fs.readFileSync(localSaves, 'utf-8')
-        const fileJSON = JSON.parse(fileString)
-        if(fileJSON.length === 0 || fileJSON === ''){
-            console.log('Sem clientes cadastrados');
-            return
-        }
-        array = fileJSON
-    }catch(e){
-        console.error('Erro ao atualizar lista de clientes')
-    }
-}
-
-
-// mudança de página >>>>
-ipcMain.on('new-Window', (event, destino) => {
-    if(destino === 'novo-cliente'){
-        formsWindow(cadastro_page)
-    }
-})
-// fechar cadastro >>>>>>>
-ipcMain.on('close-cad', (event) => {
-    novaJanela.close()
-})
