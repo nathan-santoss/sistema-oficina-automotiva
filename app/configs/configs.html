@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima Car - Configurações</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="layout-wrapper">
+        <aside class="sidebar">
+            <h1 class="sidebar-logo">CLIMA <span>CAR</span></h1>
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li class="nav-item">Dashboard</li>
+                    <li class="nav-item">Clientes</li>
+                    <li class="nav-item">Veículos</li>
+                    <li class="nav-item">Ordens de Serviço</li>
+                    <li class="nav-item">Serviços</li>
+                    <li class="nav-item">Usuários</li>
+                    <li class="nav-item">Backup</li>
+                    <li class="nav-item nav-active">Configurações</li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-header">
+                <h2 class="page-title">Configurações</h2>
+                <div class="user-profile">
+                    <div class="user-details">
+                        <span class="user-name">Ricardo Silva</span>
+                        <span class="user-role">Gerente Operacional</span>
+                    </div>
+                    <div class="user-avatar">RS</div>
+                </div>
+            </header>
+
+            <section class="settings-container">
+                <form class="settings-form">
+                    
+                    <div class="settings-card">
+                        <h3 class="section-subtitle">Dados da Oficina</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="field-label">Nome da Oficina</label>
+                                <input type="text" class="field-input" placeholder="Ex: Clima Car Ar-Condicionado">
+                            </div>
+                            <div class="form-group">
+                                <label class="field-label">Nome Fantasia</label>
+                                <input type="text" class="field-input" placeholder="Ex: Clima Car Natal">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="field-label">CNPJ</label>
+                            <input type="text" class="field-input field-readonly" value="12.345.678/0001-90" readonly>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3 class="section-subtitle">Identidade Visual</h3>
+                        <p class="section-description">O logotipo aparecerá nos relatórios e ordens de serviço impressas.</p>
+                        <div class="logo-upload-area">
+                            <div class="logo-preview">
+                                <span>Logo</span>
+                            </div>
+                            <div class="upload-controls">
+                                <label class="btn-secondary">
+                                    Selecionar Nova Logo
+                                    <input type="file" class="input-file-hidden">
+                                </label>
+                                <span class="file-info">Formatos aceitos: PNG ou JPG. Recomendado: 400x400px.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-card">
+                        <h3 class="section-subtitle">Sistema</h3>
+                        <div class="form-group">
+                            <label class="field-label">Caminho da Pasta de Backup</label>
+                            <input type="text" class="field-input field-readonly" value="C:\ClimaCar\Backups\" readonly title="Este campo não pode ser alterado manualmente">
+                        </div>
+                        <div class="form-group">
+                            <label class="field-label">Versão do Sistema</label>
+                            <span class="version-tag">v2.4.0-stable</span>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button type="button" class="btn-save">Salvar Configurações</button>
+                    </div>
+
+                </form>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>
