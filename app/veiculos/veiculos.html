@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veículos - Clima Car</title>
+    
+    <!-- Ícones Lucide -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Fonte Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Fonte Monospace para Placas -->
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+    <style>
+        /* * ==========================================
+         * VARIÁVEIS E RESET (Padrão do Sistema)
+         * ==========================================
+         */
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary-text: #64748b;
+            --dark-text: #1e293b;
+            --background-body: #f1f5f9;
+            --background-card: #ffffff;
+            --border-color: #e2e8f0;
+            --success-color: #10b981;
+            
+            --sidebar-width: 260px;
+            --header-height: 70px;
+            --border-radius: 8px;
+            --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--background-body);
+            color: var(--dark-text);
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+
+        .app-container { display: flex; min-height: 100vh; }
+
+        /* * ==========================================
+         * SIDEBAR & HEADER
+         * ==========================================
+         */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: var(--background-card);
+            border-right: 1px solid var(--border-color);
+            position: fixed;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+        }
+
+        .logo-area {
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .logo-text {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .sidebar-nav { padding: 1.5rem 1rem; flex: 1; overflow-y: auto; }
+        
+        .nav-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            border-radius: var(--border-radius);
+            color: var(--secondary-text);
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-link:hover { background-color: #eff6ff; color: var(--primary-color); }
+        .nav-link.active { background-color: #eff6ff; color: var(--primary-color); font-weight: 600; }
+        .nav-link i { width: 20px; height: 20px; }
+
+        .main-content {
+            margin-left: var(--sidebar-width);
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - var(--sidebar-width));
+        }
+
+        .top-header {
+            height: var(--header-height);
+            background-color: var(--background-card);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 5;
+        }
+
+        .page-title { font-size: 1.125rem; font-weight: 600; color: var(--dark-text); }
+        .user-area { display: flex; align-items: center; gap: 1rem; }
+        .user-info { text-align: right; display: none; }
+        @media (min-width: 768px) { .user-info { display: block; } }
+        .user-name { display: block; font-size: 0.875rem; font-weight: 600; }
+        .user-role { display: block; font-size: 0.75rem; color: var(--secondary-text); }
+        .user-avatar {
+            width: 40px; height: 40px; background-color: #e0f2fe; color: var(--primary-color);
+            border-radius: 50%; display: flex; align-items: center; justify-content: center;
+            font-weight: 600; border: 2px solid #fff; box-shadow: 0 0 0 1px var(--border-color);
+        }
+
+        .content-wrapper { padding: 2rem; max-width: 1200px; margin: 0 auto; width: 100%; }
+
+        /* * ==========================================
+         * ESTILOS ESPECÍFICOS - VEÍCULOS
+         * ==========================================
+         */
+
+        /* Barra de Controle (Busca e Filtros) */
+        .controls-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            align-items: center;
+            background: var(--background-card);
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-group {
+            flex: 1;
+            min-width: 250px;
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 12px;
+            color: #94a3b8;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 0.65rem 1rem 0.65rem 2.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            font-size: 0.9rem;
+            outline: none;
+            transition: all 0.2s;
+        }
+
+        .search-input:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .filter-select {
+            padding: 0.65rem 2rem 0.65rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius);
+            background-color: white;
+            color: var(--dark-text);
+            font-size: 0.9rem;
+            cursor: pointer;
+            outline: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            min-width: 200px;
+        }
+
+        .filter-select:focus { border-color: var(--primary-color); }
+
+        /* Tabela */
+        .table-container {
+            background-color: var(--background-card);
+            border-radius: var(--border-radius);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            overflow-x: auto;
+        }
+
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        
+        thead { background-color: #f8fafc; border-bottom: 1px solid var(--border-color); }
+        
+        th {
+            padding: 1rem 1.5rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--secondary-text);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        td {
+            padding: 1rem 1.5rem;
+            font-size: 0.875rem;
+            color: var(--dark-text);
+            border-bottom: 1px solid var(--border-color);
+            vertical-align: middle;
+        }
+
+        /* Estilo da Placa */
+        .plate-badge {
+            background-color: #e2e8f0;
+            color: var(--dark-text);
+            border: 1px solid #cbd5e1;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            font-family: 'JetBrains Mono', monospace;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+        }
+
+        /* Links para Cliente */
+        .client-link {
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+        .client-link:hover { text-decoration: underline; }
+
+        /* Botões */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1.25rem;
+            border-radius: var(--border-radius);
+            font-weight: 500;
+            font-size: 0.875rem;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.2s;
+            white-space: nowrap;
+        }
+        .btn-primary { background-color: var(--primary-color); color: white; }
+        .btn-primary:hover { background-color: var(--primary-dark); }
+
+        .btn-icon {
+            padding: 0.4rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: white;
+            color: var(--secondary-text);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        .btn-icon:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background-color: #eff6ff;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar { display: none; }
+            .main-content { margin-left: 0; width: 100%; }
+            .controls-bar { flex-direction: column; align-items: stretch; }
+            .filter-select { width: 100%; }
+            .btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="app-container">
+        
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo-area">
+                <a href="#" class="logo-text">
+                    <i data-lucide="wrench"></i>
+                    Clima Car
+                </a>
+            </div>
+            <nav class="sidebar-nav">
+                <ul class="nav-list">
+                    <li><a href="dashboard.html" class="nav-link"><i data-lucide="layout-dashboard"></i>Dashboard</a></li>
+                    <li><a href="clients.html" class="nav-link"><i data-lucide="users"></i>Clientes</a></li>
+                    <li><a href="#" class="nav-link active"><i data-lucide="car"></i>Veículos</a></li>
+                    <li><a href="#" class="nav-link"><i data-lucide="file-text"></i>Ordens de Serviço</a></li>
+                    <li><a href="#" class="nav-link"><i data-lucide="dollar-sign"></i>Financeiro</a></li>
+                    <li><a href="#" class="nav-link"><i data-lucide="wrench"></i>Serviços</a></li>
+                    <li><a href="#" class="nav-link"><i data-lucide="database"></i>Backup</a></li>
+                    <li><a href="#" class="nav-link"><i data-lucide="settings"></i>Configurações</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            
+            <header class="top-header">
+                <h1 class="page-title">Gerenciar Veículos</h1>
+                <div class="user-area">
+                    <div class="user-info">
+                        <span class="user-name">Roberto Silva</span>
+                        <span class="user-role">Administrador</span>
+                    </div>
+                    <div class="user-avatar">RS</div>
+                </div>
+            </header>
+
+            <div class="content-wrapper">
+
+                <!-- Barra de Ferramentas -->
+                <div class="controls-bar">
+                    <!-- Busca -->
+                    <div class="search-group">
+                        <i data-lucide="search" size="18" class="search-icon"></i>
+                        <input type="text" class="search-input" placeholder="Buscar por placa ou modelo...">
+                    </div>
+
+                    <!-- Filtro -->
+                    <select class="filter-select">
+                        <option value="">Todos os Clientes</option>
+                        <option value="1">Ana Paula Souza</option>
+                        <option value="2">Carlos Eduardo</option>
+                        <option value="3">Transportadora Veloz</option>
+                    </select>
+
+                    <!-- Botão Novo -->
+                    <button class="btn btn-primary">
+                        <i data-lucide="plus-circle" size="18"></i>
+                        Novo Veículo
+                    </button>
+                </div>
+
+                <!-- Tabela de Veículos -->
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Placa</th>
+                                <th>Marca / Modelo</th>
+                                <th>Ano</th>
+                                <th>Cor</th>
+                                <th>Cliente Proprietário</th>
+                                <th style="text-align: right;">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="plate-badge">ABC-1234</span></td>
+                                <td>
+                                    <strong>Chevrolet Onix</strong><br>
+                                    <span style="color: var(--secondary-text); font-size: 0.75rem;">Hatch 1.0 Flex</span>
+                                </td>
+                                <td>2020</td>
+                                <td>Prata</td>
+                                <td><a href="client_profile.html" class="client-link">Ana Paula Souza</a></td>
+                                <td>
+                                    <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                                        <button class="btn-icon" title="Histórico"><i data-lucide="history" size="16"></i></button>
+                                        <button class="btn-icon" title="Editar"><i data-lucide="edit-2" size="16"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="plate-badge">XYZ-9876</span></td>
+                                <td>
+                                    <strong>Honda Fit</strong><br>
+                                    <span style="color: var(--secondary-text); font-size: 0.75rem;">LX 1.4 CVT</span>
+                                </td>
+                                <td>2018</td>
+                                <td>Preto</td>
+                                <td><a href="client_profile.html" class="client-link">Ana Paula Souza</a></td>
+                                <td>
+                                    <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                                        <button class="btn-icon" title="Histórico"><i data-lucide="history" size="16"></i></button>
+                                        <button class="btn-icon" title="Editar"><i data-lucide="edit-2" size="16"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="plate-badge">FOX-2022</span></td>
+                                <td>
+                                    <strong>Volkswagen Fox</strong><br>
+                                    <span style="color: var(--secondary-text); font-size: 0.75rem;">Connect 1.6</span>
+                                </td>
+                                <td>2015</td>
+                                <td>Branco</td>
+                                <td><a href="#" class="client-link">Carlos Eduardo</a></td>
+                                <td>
+                                    <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                                        <button class="btn-icon" title="Histórico"><i data-lucide="history" size="16"></i></button>
+                                        <button class="btn-icon" title="Editar"><i data-lucide="edit-2" size="16"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td><span class="plate-badge">TRK-9900</span></td>
+                                <td>
+                                    <strong>Volvo FH 540</strong><br>
+                                    <span style="color: var(--secondary-text); font-size: 0.75rem;">Caminhão Trator</span>
+                                </td>
+                                <td>2022</td>
+                                <td>Azul</td>
+                                <td><a href="#" class="client-link">Transportadora Veloz</a></td>
+                                <td>
+                                    <div style="display: flex; gap: 0.5rem; justify-content: flex-end;">
+                                        <button class="btn-icon" title="Histórico"><i data-lucide="history" size="16"></i></button>
+                                        <button class="btn-icon" title="Editar"><i data-lucide="edit-2" size="16"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Script Icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
