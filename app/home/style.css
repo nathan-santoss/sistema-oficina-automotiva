@@ -1,62 +1,52 @@
-:root {
-    --primaria: #1a73e8;
-    --primaria-hover: #1765cc;
-    --fundo: #f8f9fa;
-    --branco: #ffffff;
-    --borda: #dadce0;
-    --texto-principal: #202124;
-    --texto-secundario: #5f6368;
-    --sombra-card: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
-    --sucesso: #1e8e3e;
-    --alerta: #f9ab00;
-    --azul-claro: #e8f0fe;
-}
+/* ==============================
+   BASE GLOBAL
+============================== */
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 body.corpo-sistema {
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    background-color: var(--fundo);
-    color: var(--texto-principal);
+    background-color: #f4f6f8; /* branco gelo */
+    color: #1f2933;
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
 }
 
+/* ==============================
+   MENU LATERAL
+============================== */
+
 .menu-lateral {
-    width: 256px;
-    background-color: var(--branco);
-    border-right: 1px solid var(--borda);
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e6ed;
     display: flex;
     flex-direction: column;
-    position: fixed;
-    height: 100vh;
-    z-index: 100;
 }
 
 .logo-container {
     padding: 24px;
-    border-bottom: 1px solid #f1f3f4;
+    border-bottom: 1px solid #e0e6ed;
 }
 
 .logo-texto {
-    font-size: 1.35rem;
-    color: var(--texto-principal);
-    font-weight: 500;
-    letter-spacing: -0.5px;
-    text-transform: none;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1f2933;
 }
 
 .destaque-logo {
-    color: var(--primaria);
-    font-weight: 700;
+    color: #1a73e8;
 }
 
 .navegacao {
-    padding: 12px 0;
+    padding: 16px 0;
+    flex: 1;
 }
 
 .lista-navegacao {
@@ -65,49 +55,51 @@ body.corpo-sistema {
 
 .item-navegacao {
     padding: 12px 24px;
-    margin: 4px 8px;
-    border-radius: 0 24px 24px 0;
     cursor: pointer;
-    transition: all 0.2s;
-    color: var(--texto-secundario);
-    font-size: 0.875rem;
-    font-weight: 500;
+    color: #4b5563;
+    border-radius: 0 24px 24px 0;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .item-navegacao:hover {
-    background-color: #f1f3f4;
-    color: var(--texto-principal);
+    background-color: #f1f5f9;
+    color: #1a73e8;
 }
 
 .item-ativo {
-    background-color: var(--azul-claro);
-    color: var(--primaria);
-    border-left: none;
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    font-weight: 500;
 }
 
+/* ==============================
+   CONTAINER PRINCIPAL
+============================== */
+
 .container-principal {
-    margin-left: 256px;
     flex: 1;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 
+/* ==============================
+   CABEÇALHO SUPERIOR
+============================== */
+
 .cabecalho-superior {
-    height: 64px;
-    background-color: var(--branco);
-    border-bottom: 1px solid var(--borda);
+    background-color: #ffffff;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e0e6ed;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 32px;
-    position: sticky;
-    top: 0;
 }
 
 .titulo-pagina {
-    font-size: 1.1rem;
-    color: var(--texto-principal);
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2933;
 }
 
 .area-usuario {
@@ -121,165 +113,169 @@ body.corpo-sistema {
 }
 
 .nome-usuario {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: var(--texto-principal);
+    font-weight: 500;
+    font-size: 14px;
 }
 
 .funcao-usuario {
-    font-size: 0.75rem;
-    color: var(--texto-secundario);
+    font-size: 12px;
+    color: #6b7280;
 }
 
 .avatar-usuario {
     width: 36px;
     height: 36px;
-    background-color: var(--primaria);
-    color: var(--branco);
     border-radius: 50%;
+    background-color: #1a73e8;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 500;
-    font-size: 0.85rem;
 }
+
+/* ==============================
+   CONTEÚDO PRINCIPAL
+============================== */
 
 .conteudo-principal {
-    padding: 32px;
+    padding: 24px;
+    overflow-y: auto;
 }
 
-.titulo-secao {
-    font-size: 1rem;
-    color: var(--texto-principal);
-    margin-bottom: 20px;
-    font-weight: 500;
-}
+/* ==============================
+   CARDS DE RESUMO
+============================== */
 
 .secao-resumo {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 16px;
-    margin-bottom: 40px;
+    margin-bottom: 32px;
 }
 
 .card-resumo {
-    background-color: var(--branco);
-    padding: 24px;
-    border-radius: 8px;
-    border: 1px solid var(--borda);
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .rotulo-card {
-    font-size: 0.75rem;
-    color: var(--texto-secundario);
-    margin-bottom: 8px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    font-size: 13px;
+    color: #6b7280;
 }
 
 .valor-card {
-    font-size: 1.75rem;
-    font-weight: 500;
-    color: var(--primaria);
+    font-size: 26px;
+    font-weight: 600;
+    color: #1a73e8;
 }
 
+/* ==============================
+   AÇÕES RÁPIDAS
+============================== */
+
 .secao-acoes {
-    margin-bottom: 40px;
+    margin-bottom: 32px;
+}
+
+.titulo-secao {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 12px;
 }
 
 .grupo-botoes {
     display: flex;
     gap: 12px;
+    flex-wrap: wrap;
 }
 
 .botao-acao {
-    padding: 10px 24px;
-    border-radius: 4px;
-    border: 1px solid var(--borda);
-    background-color: var(--branco);
-    color: var(--primaria);
-    font-size: 0.875rem;
-    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 24px;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    color: #1f2933;
     cursor: pointer;
-    transition: background 0.2s;
+    font-size: 14px;
+    transition: background-color 0.2s, border-color 0.2s;
 }
 
 .botao-acao:hover {
-    background-color: #f8f9fa;
-    border-color: var(--primaria);
+    background-color: #f1f5f9;
 }
 
 .botao-primario {
-    background-color: var(--primaria);
-    color: var(--branco);
-    border: 1px solid var(--primaria);
+    background-color: #1a73e8;
+    color: #ffffff;
+    border-color: #1a73e8;
 }
 
 .botao-primario:hover {
-    background-color: var(--primaria-hover);
-    box-shadow: 0 1px 2px rgba(60,64,67,.3);
+    background-color: #1669d3;
 }
 
+/* ==============================
+   TABELA
+============================== */
+
 .secao-tabela {
-    background-color: var(--branco);
-    padding: 24px;
-    border-radius: 8px;
-    border: 1px solid var(--borda);
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
 }
 
 .tabela-container {
-    width: 100%;
+    overflow-x: auto;
 }
 
 .tabela-dados {
     width: 100%;
     border-collapse: collapse;
+    margin-top: 12px;
 }
 
 .tabela-dados th {
-    padding: 12px 16px;
-    border-bottom: 1px solid var(--borda);
-    color: var(--texto-secundario);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    font-weight: 600;
     text-align: left;
+    font-size: 13px;
+    color: #6b7280;
+    padding-bottom: 12px;
 }
 
 .tabela-dados td {
-    padding: 16px;
-    border-bottom: 1px solid #f1f3f4;
-    font-size: 0.875rem;
-    color: var(--texto-principal);
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 14px;
 }
 
-.tabela-dados tbody tr:hover {
-    background-color: #f8f9fa;
-}
+/* ==============================
+   STATUS
+============================== */
 
 .etiqueta {
-    padding: 4px 12px;
-    border-radius: 16px;
-    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
     font-weight: 500;
-    display: inline-block;
-}
-
-.status-andamento {
-    background-color: #fef7e0;
-    color: #b06000;
 }
 
 .status-aberta {
-    background-color: var(--azul-claro);
-    color: var(--primaria);
+    background-color: #fff7ed;
+    color: #c2410c;
+}
+
+.status-andamento {
+    background-color: #eff6ff;
+    color: #1a73e8;
 }
 
 .status-finalizada {
-    background-color: #e6f4ea;
-    color: var(--sucesso);
+    background-color: #ecfdf5;
+    color: #047857;
 }

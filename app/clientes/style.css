@@ -1,93 +1,92 @@
-/* Reset e Estrutura Base */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 body.corpo-sistema {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f8fafc;
-    color: #334155;
+    background-color: #f4f6f8;
+    color: #1f2933;
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
 }
 
-/* Menu Lateral (Fixo) */
 .menu-lateral {
     width: 260px;
     background-color: #ffffff;
-    border-right: 1px solid #e2e8f0;
-    position: fixed;
-    height: 100%;
+    border-right: 1px solid #e0e6ed;
     display: flex;
     flex-direction: column;
 }
 
-.logotipo-area {
-    padding: 25px;
-    border-bottom: 1px solid #f1f5f9;
+.logo-container {
+    padding: 24px;
+    border-bottom: 1px solid #e0e6ed;
 }
 
-.logotipo-texto {
-    color: #3a86ff;
-    font-size: 1.4rem;
-    font-weight: 800;
+.logo-texto {
+    font-size: 22px;
+    font-weight: 600;
 }
 
-.navegacao-principal {
-    padding-top: 15px;
+.destaque-logo {
+    color: #1a73e8;
 }
 
-.lista-menu {
+.navegacao {
+    padding: 16px 0;
+    flex: 1;
+}
+
+.lista-navegacao {
     list-style: none;
 }
 
-.link-menu {
-    display: block;
-    padding: 14px 25px;
-    color: #64748b;
-    text-decoration: none;
-    font-size: 0.95rem;
-    font-weight: 500;
-    transition: all 0.2s;
+.item-navegacao {
+    padding: 12px 24px;
+    cursor: pointer;
+    color: #4b5563;
+    border-radius: 0 24px 24px 0;
+    transition: background-color 0.2s, color 0.2s;
 }
 
-.link-menu:hover {
+.item-navegacao:hover {
     background-color: #f1f5f9;
-    color: #3a86ff;
+    color: #1a73e8;
 }
 
-.link-ativo {
-    background-color: #eff6ff;
-    color: #3a86ff;
-    border-right: 4px solid #3a86ff;
+.item-ativo {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    font-weight: 500;
 }
 
-/* Área de Conteúdo */
 .area-principal {
-    margin-left: 260px;
     flex: 1;
-    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
-/* Cabeçalho da Página */
 .cabecalho-pagina {
+    background-color: #ffffff;
+    padding: 20px 24px;
+    border-bottom: 1px solid #e0e6ed;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 30px;
 }
 
 .titulo-pagina {
-    font-size: 1.8rem;
-    color: #1e293b;
-    margin-bottom: 5px;
+    font-size: 22px;
+    font-weight: 600;
 }
 
 .subtitulo-pagina {
-    color: #94a3b8;
-    font-size: 0.95rem;
+    font-size: 14px;
+    color: #6b7280;
 }
 
 .area-usuario {
@@ -97,200 +96,176 @@ body.corpo-sistema {
 }
 
 .nome-usuario {
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: #475569;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .avatar-usuario {
-    width: 40px;
-    height: 40px;
-    background-color: #3a86ff;
-    color: white;
-    border-radius: 8px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #1a73e8;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    font-weight: 500;
 }
 
-/* Barra de Ferramentas (Busca e Botão) */
 .barra-ferramentas {
+    padding: 16px 24px;
+    background-color: #ffffff;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 25px;
-    gap: 20px;
-}
-
-.grupo-busca {
-    flex: 1;
-    max-width: 500px;
+    border-bottom: 1px solid #e0e6ed;
 }
 
 .campo-busca {
-    width: 100%;
-    padding: 12px 16px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    font-size: 0.95rem;
-    outline: none;
-    transition: border-color 0.2s;
+    width: 320px;
+    padding: 10px 14px;
+    border-radius: 24px;
+    border: 1px solid #d1d5db;
+    font-size: 14px;
 }
 
 .campo-busca:focus {
-    border-color: #3a86ff;
-    box-shadow: 0 0 0 3px rgba(58, 134, 255, 0.1);
+    outline: none;
+    border-color: #1a73e8;
 }
 
 .botao-primario {
-    background-color: #3a86ff;
-    color: white;
+    padding: 10px 20px;
+    border-radius: 24px;
     border: none;
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
+    background-color: #1a73e8;
+    color: #ffffff;
+    font-size: 14px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: background-color 0.2s;
 }
 
 .botao-primario:hover {
-    background-color: #2563eb;
+    background-color: #1669d3;
 }
 
-/* Tabela de Clientes */
 .secao-tabela {
-    background-color: #ffffff;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    padding: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    overflow: hidden;
 }
 
 .container-tabela {
-    width: 100%;
-    overflow-x: auto;
+    background-color: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
 }
 
 .tabela-listagem {
     width: 100%;
     border-collapse: collapse;
-    text-align: left;
+}
+
+.tabela-listagem thead {
+    background-color: #f9fafb;
 }
 
 .tabela-listagem th {
-    background-color: #f8fafc;
-    padding: 16px;
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: #64748b;
-    border-bottom: 1px solid #e2e8f0;
+    padding: 14px;
+    text-align: left;
+    font-size: 13px;
+    color: #6b7280;
+    font-weight: 500;
 }
 
 .tabela-listagem td {
-    padding: 16px;
-    font-size: 0.95rem;
-    border-bottom: 1px solid #f1f5f9;
+    padding: 14px;
+    border-top: 1px solid #e5e7eb;
+    font-size: 14px;
 }
 
 .celula-nome {
-    font-weight: 600;
-    color: #1e293b;
+    font-weight: 500;
 }
 
-/* Etiquetas e Status */
 .etiqueta-tipo {
     padding: 4px 10px;
-    border-radius: 6px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    background-color: #f1f5f9;
-    color: #475569;
-}
-
-.etiqueta-tipo.juridica {
+    border-radius: 12px;
+    font-size: 12px;
     background-color: #e0f2fe;
     color: #0369a1;
 }
 
-/* Botões de Ação na Tabela */
-.coluna-acoes {
-    text-align: right;
-    white-space: nowrap;
+.etiqueta-tipo.juridica {
+    background-color: #ede9fe;
+    color: #5b21b6;
 }
 
-.botao-tabela-editar, .botao-tabela-visualizar {
+.coluna-acoes {
+    display: flex;
+    gap: 8px;
+}
+
+.botao-tabela-editar,
+.botao-tabela-visualizar {
     padding: 6px 12px;
-    border-radius: 6px;
-    font-size: 0.85rem;
-    font-weight: 600;
+    border-radius: 16px;
+    border: none;
+    font-size: 12px;
     cursor: pointer;
-    margin-left: 5px;
-    border: 1px solid transparent;
 }
 
 .botao-tabela-editar {
-    background-color: #f1f5f9;
-    color: #475569;
-}
-
-.botao-tabela-editar:hover {
-    background-color: #e2e8f0;
+    background-color: #e8f0fe;
+    color: #1a73e8;
 }
 
 .botao-tabela-visualizar {
-    background-color: transparent;
-    border-color: #e2e8f0;
-    color: #64748b;
+    background-color: #f1f5f9;
+    color: #374151;
+}
+
+.botao-tabela-editar:hover {
+    background-color: #dbeafe;
 }
 
 .botao-tabela-visualizar:hover {
-    background-color: #f8fafc;
-    border-color: #cbd5e1;
+    background-color: #e5e7eb;
 }
 
-/* Rodapé e Paginação */
 .rodape-tabela {
-    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #ffffff;
-    border-bottom-left-radius: 12px;
-    border-bottom-right-radius: 12px;
-}
-
-.contagem-registros {
-    font-size: 0.85rem;
-    color: #94a3b8;
+    font-size: 13px;
+    color: #6b7280;
 }
 
 .paginacao {
     display: flex;
-    gap: 5px;
+    gap: 6px;
 }
 
 .botao-paginacao {
-    padding: 8px 12px;
-    border: 1px solid #e2e8f0;
-    background: white;
-    border-radius: 6px;
-    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 12px;
+    border: 1px solid #d1d5db;
+    background-color: #ffffff;
+    font-size: 13px;
     cursor: pointer;
-    color: #64748b;
 }
 
 .botao-paginacao.ativo {
-    background-color: #3a86ff;
-    color: white;
-    border-color: #3a86ff;
+    background-color: #1a73e8;
+    color: #ffffff;
+    border-color: #1a73e8;
 }
 
 .botao-paginacao:disabled {
     opacity: 0.5;
-    cursor: not-allowed;
-}
-
-.botao-paginacao:hover:not(:disabled):not(.ativo) {
-    background-color: #f1f5f9;
+    cursor: default;
 }

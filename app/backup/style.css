@@ -1,58 +1,44 @@
-:root {
-    --primaria: #1a73e8;
-    --primaria-hover: #1765cc;
-    --fundo: #f8f9fa;
-    --branco: #ffffff;
-    --borda: #dadce0;
-    --texto-principal: #202124;
-    --texto-secundario: #5f6368;
-    --perigo: #d93025;
-    --perigo-fundo: #fce8e6;
-    --azul-claro: #e8f0fe;
-    --sucesso: #1e8e3e;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
 }
 
 body.corpo-sistema {
-    font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-    background-color: var(--fundo);
-    color: var(--texto-principal);
+    background-color: #f4f6f8;
+    color: #1f2933;
     display: flex;
-    min-height: 100vh;
+    height: 100vh;
+    overflow: hidden;
 }
 
 .menu-lateral {
-    width: 256px;
-    background-color: var(--branco);
-    border-right: 1px solid var(--borda);
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e6ed;
     display: flex;
     flex-direction: column;
-    position: fixed;
-    height: 100vh;
 }
 
 .logo-container {
     padding: 24px;
-    border-bottom: 1px solid #f1f3f4;
+    border-bottom: 1px solid #e0e6ed;
 }
 
 .logo-texto {
-    font-size: 1.35rem;
-    font-weight: 500;
+    font-size: 22px;
+    font-weight: 600;
+    color: #1f2933;
 }
 
 .destaque-logo {
-    color: var(--primaria);
-    font-weight: 700;
+    color: #1a73e8;
 }
 
 .navegacao {
-    padding: 12px 0;
+    padding: 16px 0;
+    flex: 1;
 }
 
 .lista-navegacao {
@@ -61,37 +47,43 @@ body.corpo-sistema {
 
 .item-navegacao {
     padding: 12px 24px;
-    margin: 4px 8px;
-    border-radius: 0 24px 24px 0;
     cursor: pointer;
-    color: var(--texto-secundario);
-    font-size: 0.875rem;
-    font-weight: 500;
+    color: #4b5563;
+    border-radius: 0 24px 24px 0;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.item-navegacao:hover {
+    background-color: #f1f5f9;
+    color: #1a73e8;
 }
 
 .item-ativo {
-    background-color: var(--azul-claro);
-    color: var(--primaria);
+    background-color: #e8f0fe;
+    color: #1a73e8;
+    font-weight: 500;
 }
 
 .container-principal {
-    margin-left: 256px;
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 }
 
 .cabecalho-superior {
-    height: 64px;
-    background-color: var(--branco);
-    border-bottom: 1px solid var(--borda);
+    background-color: #ffffff;
+    padding: 16px 24px;
+    border-bottom: 1px solid #e0e6ed;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 32px;
 }
 
 .titulo-pagina {
-    font-size: 1.1rem;
-    font-weight: 400;
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f2933;
 }
 
 .area-usuario {
@@ -100,87 +92,136 @@ body.corpo-sistema {
     gap: 12px;
 }
 
+.info-usuario {
+    text-align: right;
+}
+
+.nome-usuario {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.funcao-usuario {
+    font-size: 12px;
+    color: #6b7280;
+}
+
 .avatar-usuario {
     width: 36px;
     height: 36px;
-    background-color: var(--primaria);
-    color: var(--branco);
     border-radius: 50%;
+    background-color: #1a73e8;
+    color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.conteudo-principal {
-    padding: 32px;
-    max-width: 900px;
-}
-
-.cartao-backup {
-    background-color: var(--branco);
-    padding: 24px;
-    border-radius: 8px;
-    border: 1px solid var(--borda);
-    margin-bottom: 24px;
-}
-
-.titulo-secao {
-    font-size: 1.1rem;
-    margin-bottom: 12px;
     font-weight: 500;
 }
 
-.texto-informativo {
-    font-size: 0.9rem;
-    color: var(--texto-secundario);
-    margin-bottom: 20px;
+.conteudo-principal {
+    padding: 24px;
+    overflow-y: auto;
+    display: grid;
+    gap: 24px;
 }
 
-.info-status {
-    background-color: #f8f9fa;
-    padding: 16px;
-    border-left: 4px solid var(--primaria);
-}
-
-.valor-status {
-    font-weight: 600;
-    color: var(--sucesso);
-}
-
-.botao-acao-principal {
-    padding: 10px 24px;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--primaria);
-    color: var(--branco);
-    cursor: pointer;
+.cartao-backup {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 .area-restauracao {
-    border-top: 4px solid var(--perigo);
+    border: 1px solid #fee2e2;
+}
+
+.titulo-secao {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1f2933;
+}
+
+.texto-informativo {
+    font-size: 14px;
+    color: #4b5563;
+    line-height: 1.6;
+}
+
+.info-status {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+}
+
+.rotulo-status {
+    color: #6b7280;
+}
+
+.valor-status {
+    font-weight: 500;
+    color: #1f2933;
+}
+
+.botao-acao-principal {
+    align-self: flex-start;
+    padding: 10px 20px;
+    border-radius: 24px;
+    border: none;
+    background-color: #1a73e8;
+    color: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.botao-acao-principal:hover {
+    background-color: #1669d3;
 }
 
 .bloco-alerta {
-    background-color: var(--perigo-fundo);
+    background-color: #fff1f2;
+    border-radius: 12px;
     padding: 16px;
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
 }
 
 .titulo-alerta {
-    color: var(--perigo);
-    font-size: 0.85rem;
+    font-size: 14px;
+    color: #b91c1c;
+}
+
+.mensagem-alerta {
+    font-size: 13px;
+    color: #7f1d1d;
+    line-height: 1.5;
+}
+
+.acoes-restauracao {
+    margin-top: 8px;
 }
 
 .botao-acao-critica {
-    padding: 10px 24px;
-    border: 1px solid var(--borda);
-    background-color: var(--branco);
-    color: var(--perigo);
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 24px;
+    border: none;
+    background-color: #dc2626;
+    color: #ffffff;
+    font-size: 14px;
     cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.texto-nota {
-    font-size: 0.75rem;
-    color: var(--texto-secundario);
+.botao-acao-critica:hover {
+    background-color: #b91c1c;
+}
+
+.nota-confirmacao {
+    font-size: 12px;
+    color: #6b7280;
 }
