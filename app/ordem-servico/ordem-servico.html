@@ -13,15 +13,15 @@
             <h1 class="logo-texto">Clima <span class="destaque-logo">Car</span></h1>
         </div>
         <nav class="navegacao">
-            <ul class="lista-navegacao">
-                <li class="item-navegacao">Dashboard</li>
-                <li class="item-navegacao">Clientes</li>
-                <li class="item-navegacao">Veículos</li>
-                <li class="item-navegacao item-ativo">Ordens de Serviço</li>
-                <li class="item-navegacao">Serviços</li>
-                <li class="item-navegacao">Usuários</li>
-                <li class="item-navegacao">Backup</li>
-                <li class="item-navegacao">Configurações</li>
+            <ul class="lista-navegacao" id="menu-navegacao">
+                <li class="item-navegacao item-ativo" data-page="home">Dashboard</li>
+                <li class="item-navegacao" data-page="clientes">Clientes</li>
+                <li class="item-navegacao" data-page="veiculos">Veículos</li>
+                <li class="item-navegacao" data-page="os">Ordens de Serviço</li>
+                <li class="item-navegacao" data-page="services">Serviços</li>
+                <li class="item-navegacao" data-page="users">Usuários</li>
+                <li class="item-navegacao" data-page="backup">Backup</li>
+                <li class="item-navegacao" data-page="config">Configurações</li>
             </ul>
         </nav>
     </aside>
@@ -141,6 +141,6 @@
             </section>
         </main>
     </div>
-
+    <script src="../renderer-nav.js"></script>
 </body>
 </html>

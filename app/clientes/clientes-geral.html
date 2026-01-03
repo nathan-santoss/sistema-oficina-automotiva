@@ -9,19 +9,19 @@
 <body class="corpo-sistema">
 
     <aside class="menu-lateral">
-        <div class="logotipo-area">
-            <h2 class="logotipo-texto">Clima Car</h2>
+        <div class="logo-container">
+            <h1 class="logo-texto">Clima <span class="destaque-logo">Car</span></h1>
         </div>
-        <nav class="navegacao-principal">
-            <ul class="lista-menu">
-                <li><a href="#" class="link-menu">Dashboard</a></li>
-                <li><a href="#" class="link-menu link-ativo">Clientes</a></li>
-                <li><a href="#" class="link-menu">Veículos</a></li>
-                <li><a href="#" class="link-menu">Ordens de Serviço</a></li>
-                <li><a href="#" class="link-menu">Financeiro</a></li>
-                <li><a href="#" class="link-menu">Serviços</a></li>
-                <li><a href="#" class="link-menu">Backup</a></li>
-                <li><a href="#" class="link-menu">Configurações</a></li>
+        <nav class="navegacao">
+            <ul class="lista-navegacao" id="menu-navegacao">
+                <li class="item-navegacao item-ativo" data-page="home">Dashboard</li>
+                <li class="item-navegacao" data-page="clientes">Clientes</li>
+                <li class="item-navegacao" data-page="veiculos">Veículos</li>
+                <li class="item-navegacao" data-page="os">Ordens de Serviço</li>
+                <li class="item-navegacao" data-page="services">Serviços</li>
+                <li class="item-navegacao" data-page="users">Usuários</li>
+                <li class="item-navegacao" data-page="backup">Backup</li>
+                <li class="item-navegacao" data-page="config">Configurações</li>
             </ul>
         </nav>
     </aside>
@@ -125,6 +125,6 @@
             </footer>
         </section>
     </main>
-
+    <script src="../renderer-nav.js"></script>
 </body>
 </html>

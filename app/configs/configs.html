@@ -3,98 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clima Car - Configurações</title>
+    <title>Clima Car - Backup e Restauração</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="corpo-sistema">
 
-    <div class="layout-wrapper">
-        <aside class="sidebar">
-            <h1 class="sidebar-logo">CLIMA <span>CAR</span></h1>
-            <nav class="sidebar-nav">
-                <ul class="nav-list">
-                    <li class="nav-item">Dashboard</li>
-                    <li class="nav-item">Clientes</li>
-                    <li class="nav-item">Veículos</li>
-                    <li class="nav-item">Ordens de Serviço</li>
-                    <li class="nav-item">Serviços</li>
-                    <li class="nav-item">Usuários</li>
-                    <li class="nav-item">Backup</li>
-                    <li class="nav-item nav-active">Configurações</li>
-                </ul>
-            </nav>
-        </aside>
+    <aside class="menu-lateral">
+        <div class="logo-container">
+            <h1 class="logo-texto">Clima <span class="destaque-logo">Car</span></h1>
+        </div>
+        <nav class="navegacao">
+            <ul class="lista-navegacao" id="menu-navegacao">
+                <li class="item-navegacao item-ativo" data-page="home">Dashboard</li>
+                <li class="item-navegacao" data-page="clientes">Clientes</li>
+                <li class="item-navegacao" data-page="veiculos">Veículos</li>
+                <li class="item-navegacao" data-page="os">Ordens de Serviço</li>
+                <li class="item-navegacao" data-page="services">Serviços</li>
+                <li class="item-navegacao" data-page="users">Usuários</li>
+                <li class="item-navegacao" data-page="backup">Backup</li>
+                <li class="item-navegacao" data-page="config">Configurações</li>
+            </ul>
+        </nav>
+    </aside>
 
-        <main class="main-content">
-            <header class="top-header">
-                <h2 class="page-title">Configurações</h2>
-                <div class="user-profile">
-                    <div class="user-details">
-                        <span class="user-name">Ricardo Silva</span>
-                        <span class="user-role">Gerente Operacional</span>
-                    </div>
-                    <div class="user-avatar">RS</div>
+    <div class="container-principal">
+        <header class="cabecalho-superior">
+            <div class="titulo-pagina-container">
+                <h2 class="titulo-pagina">Backup e Restauração</h2>
+            </div>
+            <div class="area-usuario">
+                <div class="info-usuario">
+                    <span class="nome-usuario">Ricardo Silva</span>
+                    <span class="funcao-usuario">Gerente Operacional</span>
                 </div>
-            </header>
+                <div class="avatar-usuario">RS</div>
+            </div>
+        </header>
 
-            <section class="settings-container">
-                <form class="settings-form">
-                    
-                    <div class="settings-card">
-                        <h3 class="section-subtitle">Dados da Oficina</h3>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label class="field-label">Nome da Oficina</label>
-                                <input type="text" class="field-input" placeholder="Ex: Clima Car Ar-Condicionado">
-                            </div>
-                            <div class="form-group">
-                                <label class="field-label">Nome Fantasia</label>
-                                <input type="text" class="field-input" placeholder="Ex: Clima Car Natal">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label class="field-label">CNPJ</label>
-                            <input type="text" class="field-input field-readonly" value="12.345.678/0001-90" readonly>
-                        </div>
-                    </div>
-
-                    <div class="settings-card">
-                        <h3 class="section-subtitle">Identidade Visual</h3>
-                        <p class="section-description">O logotipo aparecerá nos relatórios e ordens de serviço impressas.</p>
-                        <div class="logo-upload-area">
-                            <div class="logo-preview">
-                                <span>Logo</span>
-                            </div>
-                            <div class="upload-controls">
-                                <label class="btn-secondary">
-                                    Selecionar Nova Logo
-                                    <input type="file" class="input-file-hidden">
-                                </label>
-                                <span class="file-info">Formatos aceitos: PNG ou JPG. Recomendado: 400x400px.</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="settings-card">
-                        <h3 class="section-subtitle">Sistema</h3>
-                        <div class="form-group">
-                            <label class="field-label">Caminho da Pasta de Backup</label>
-                            <input type="text" class="field-input field-readonly" value="C:\ClimaCar\Backups\" readonly title="Este campo não pode ser alterado manualmente">
-                        </div>
-                        <div class="form-group">
-                            <label class="field-label">Versão do Sistema</label>
-                            <span class="version-tag">v2.4.0-stable</span>
-                        </div>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="button" class="btn-save">Salvar Configurações</button>
-                    </div>
-
-                </form>
+        <main class="conteudo-principal">
+            
+            <section class="cartao-backup">
+                <h3 class="titulo-secao">Backup Automático</h3>
+                <p class="texto-informativo">
+                    O sistema realiza cópias de segurança automáticas todos os dias às 22:00. 
+                    Esses arquivos são armazenados localmente e na nuvem para garantir a integridade dos seus dados.
+                </p>
+                <div class="info-status">
+                    <span class="rotulo-status">Último backup realizado:</span>
+                    <span class="valor-status">02/01/2026 às 22:00:04</span>
+                </div>
             </section>
+
+            <section class="cartao-backup">
+                <h3 class="titulo-secao">Backup Manual</h3>
+                <p class="texto-informativo">
+                    Recomendamos a criação de um backup manual antes de grandes atualizações ou manutenções no sistema.
+                </p>
+                <button class="botao-acao-principal">Criar Backup Agora</button>
+            </section>
+
+            <section class="cartao-backup area-restauracao">
+                <h3 class="titulo-secao">Restauração de Dados</h3>
+                <p class="texto-informativo">
+                    Selecione um arquivo de backup anterior para restaurar o banco de dados do sistema.
+                </p>
+                
+                <div class="bloco-alerta">
+                    <strong class="titulo-alerta">Atenção: Ação Irreversível</strong>
+                    <p class="mensagem-alerta">
+                        Todos os dados atuais serão apagados e substituídos pelo conteúdo do backup selecionado. 
+                        Certifique-se de que escolheu o arquivo correto.
+                    </p>
+                </div>
+
+                <div class="acoes-restauracao">
+                    <button class="botao-acao-critica">Restaurar Backup</button>
+                </div>
+                
+                <div class="nota-confirmacao">
+                    <p class="texto-nota">* O sistema solicitará a senha de administrador para validar qualquer restauração.</p>
+                </div>
+            </section>
+
         </main>
     </div>
-
+    <script src="../renderer-nav.js"></script>
 </body>
 </html>

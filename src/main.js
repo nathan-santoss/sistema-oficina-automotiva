@@ -5,7 +5,7 @@ import fs from 'fs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-const preload = path.join(__dirname, 'preaload.js')
+const preload = path.join(__dirname, 'preload.js')
 
 // PAGINAS HTML >>>>>
 const page_home = path.join(__dirname, '../app/home/home.html')
