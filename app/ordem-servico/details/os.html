@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhe da OS - Clima Car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="corpo-sistema">
+
+    <aside class="menu-lateral">
+        <div class="logo-container">
+            <h1 class="logo-texto">Clima <span class="destaque-logo">Car</span></h1>
+        </div>
+        <nav class="navegacao">
+            <ul class="lista-navegacao">
+                <li class="item-navegacao">Dashboard</li>
+                <li class="item-navegacao">Clientes</li>
+                <li class="item-navegacao">Veículos</li>
+                <li class="item-navegacao item-ativo">Ordens de Serviço</li>
+                <li class="item-navegacao">Serviços</li>
+                <li class="item-navegacao">Usuários</li>
+                <li class="item-navegacao">Backup</li>
+                <li class="item-navegacao">Configurações</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="container-principal">
+        <header class="cabecalho-superior">
+            <div class="titulo-pagina-container">
+                <h2 class="titulo-pagina">Ordem de Serviço <span class="numero-os-titulo">#2026-0085</span></h2>
+            </div>
+            <div class="area-usuario">
+                <div class="info-usuario">
+                    <span class="nome-usuario">Ricardo Silva</span>
+                    <span class="funcao-usuario">Gerente Operacional</span>
+                </div>
+                <div class="avatar-usuario">RS</div>
+            </div>
+        </header>
+
+        <main class="conteudo-detalhado">
+            
+            <section class="cabecalho-os">
+                <div class="status-os-container">
+                    <span class="legenda-topo">Status Atual</span>
+                    <span class="badge-status status-andamento">Em Andamento</span>
+                </div>
+                <div class="datas-os-container">
+                    <div class="data-item">
+                        <span class="legenda-topo">Entrada</span>
+                        <span class="valor-topo">03/01/2026 - 09:15</span>
+                    </div>
+                    <div class="data-item">
+                        <span class="legenda-topo">Previsão de Saída</span>
+                        <span class="valor-topo">05/01/2026</span>
+                    </div>
+                </div>
+            </section>
+
+            <div class="grade-informacoes">
+                <section class="card-info-os">
+                    <h3 class="titulo-card">Dados do Cliente</h3>
+                    <div class="corpo-card">
+                        <p class="nome-enfase">Carlos Eduardo Santos</p>
+                        <p class="texto-secundario">CPF: 123.456.789-00</p>
+                        <p class="texto-secundario">Tel: (11) 98888-7777</p>
+                    </div>
+                </section>
+
+                <section class="card-info-os">
+                    <h3 class="titulo-card">Dados do Veículo</h3>
+                    <div class="corpo-card">
+                        <p class="nome-enfase">VW Golf TSI 2018</p>
+                        <p class="texto-secundario">Placa: <span class="placa-destaque">ABC-1234</span></p>
+                        <p class="texto-secundario">Cor: Cinza Platinum</p>
+                    </div>
+                </section>
+            </div>
+
+            <section class="secao-servicos-executados">
+                <div class="cabecalho-tabela-servicos">
+                    <h3 class="titulo-secao">Serviços Executados</h3>
+                    <button class="botao-adicionar">Adicionar Serviço</button>
+                </div>
+                <div class="tabela-container">
+                    <table class="tabela-servicos">
+                        <thead>
+                            <tr>
+                                <th>Serviço / Peça</th>
+                                <th>Responsável</th>
+                                <th>Qtd</th>
+                                <th>Valor Unit.</th>
+                                <th>Total</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="servico-nome">Troca de Filtro de Ar Condicionado</td>
+                                <td>Jorge Oliveira (Técnico)</td>
+                                <td>1</td>
+                                <td>R$ 85,00</td>
+                                <td class="texto-bold">R$ 85,00</td>
+                            </tr>
+                            <tr>
+                                <td class="servico-nome">Higienização Completa (Oxi-Sanitização)</td>
+                                <td>Jorge Oliveira (Técnico)</td>
+                                <td>1</td>
+                                <td>R$ 150,00</td>
+                                <td class="texto-bold">R$ 150,00</td>
+                            </tr>
+                            <tr>
+                                <td class="servico-nome">Carga de Gás R134a</td>
+                                <td>Marcos Silva (Auxiliar)</td>
+                                <td>2</td>
+                                <td>R$ 110,00</td>
+                                <td class="texto-bold">R$ 220,00</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr class="linha-total">
+                                <td colspan="4" class="alinhamento-direita">Valor Total da OS:</td>
+                                <td class="valor-total-final">R$ 455,00</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section class="secao-observacoes">
+                <h3 class="titulo-secao">Observações do Cliente</h3>
+                <div class="bloco-observacao">
+                    <p>O cliente relatou um odor forte ao ligar o ar condicionado em dias úmidos. Solicitou verificação do dreno. Não realizar serviços extras sem consulta prévia via WhatsApp.</p>
+                </div>
+            </section>
+
+            <footer class="barra-acoes-final">
+                <button class="botao-pdf">Gerar PDF de Serviço</button>
+                <div class="grupo-botoes-direita">
+                    <button class="botao-cancelar">Suspender OS</button>
+                    <button class="botao-finalizar">Finalizar Ordem</button>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+</body>
+</html>

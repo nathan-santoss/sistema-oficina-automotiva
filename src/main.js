@@ -1,22 +1,24 @@
-import { app, BrowserWindow, ipcMain, Menu, dialog } from "electron";
+import { app,BrowserWindow, ipcMain, Menu, dialog } from "electron";
 import path from 'path'
 import { fileURLToPath } from "url";
 import fs from 'fs'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
-const preload = path.join(__dirname, 'preload.js')
+const preload = path.join(__dirname, 'preaload.js')
 
-// base de dados >>>>>
-const dataBase = path.join(__dirname, './database.json')
-// PAGINAS >>>>
-const home_page = path.join(__dirname, '../app/home/home.html')
-const cadastro_page = path.join(__dirname, '../app/cadastro/cadastro.html')
-
-let clientes = []
+// PAGINAS HTML >>>>>
+const page_home = path.join(__dirname, '../app/home/home.html')
+const page_clients = path.join(__dirname, '../app/clientes/clientes-geral.html')
+const page_ordemServicos = path.join(__dirname, '../app/ordem-servico/ordem-servico.html')
+const page_servicos = path.join(__dirname, '../app/services/servicos.html')
+const page_users = path.join(__dirname, '../app/users/usuarios.html')
+const page_veiculos = path.join(__dirname, '../app/veiculos/veiculos.html')
+// <<<<< PAGINAS HTML
 
 let win = null
-const criarJanela = () => {
+
+const criarWin = () => {
     win = new BrowserWindow({
         webPreferences:{
             nodeIntegration: false,
@@ -28,30 +30,10 @@ const criarJanela = () => {
     })
     win.maximize()
     win.removeMenu()
-    win.loadFile(home_page)
+    win.loadFile(page_home)
     // win.webContents.openDevTools()
-}
-let novaJanela = null
-const formsWindow = (tipo) => {
-    novaJanela = new BrowserWindow({
-        webPreferences:{
-            nodeIntegration: false,
-            contextIsolation: true,
-            devTools: true,
-            sandbox: false,
-            preload: preload
-        }
-    })
-
-    novaJanela.removeMenu()
-    novaJanela.maximize()
-    novaJanela.webContents.openDevTools()
-
-    novaJanela.loadFile(tipo)
 }
 
 app.whenReady().then(() => {
-    uptade_clients(dataBase, clientes)
-    criarJanela()
+    criarWin()
 })
-

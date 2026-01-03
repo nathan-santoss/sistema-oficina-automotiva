@@ -1,0 +1,267 @@
+/* Reset e Definições Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Menu Lateral */
+.menu-lateral {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    height: 100vh;
+}
+
+.logo-container {
+    padding: 30px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo-texto {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.destaque-logo {
+    color: #3498db;
+}
+
+.navegacao {
+    padding: 20px 0;
+}
+
+.lista-navegacao {
+    list-style: none;
+}
+
+.item-navegacao {
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #5f6368;
+    font-weight: 500;
+}
+
+.item-navegacao:hover {
+    background-color: #f0f7ff;
+    color: #3498db;
+}
+
+.item-ativo {
+    background-color: #e3f2fd;
+    color: #3498db;
+    border-left: 4px solid #3498db;
+}
+
+/* Área de Conteúdo Principal */
+.container-principal {
+    margin-left: 260px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Cabeçalho */
+.cabecalho-superior {
+    height: 70px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.titulo-pagina {
+    font-size: 1.25rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.area-usuario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-usuario {
+    text-align: right;
+}
+
+.nome-usuario {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.funcao-usuario {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+.avatar-usuario {
+    width: 40px;
+    height: 40px;
+    background-color: #3498db;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+/* Conteúdo */
+.conteudo-principal {
+    padding: 30px;
+}
+
+.titulo-secao {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Cards de Resumo */
+.secao-resumo {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card-resumo {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+}
+
+.rotulo-card {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.valor-card {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #3498db;
+}
+
+/* Ações Rápidas */
+.secao-acoes {
+    margin-bottom: 40px;
+}
+
+.grupo-botoes {
+    display: flex;
+    gap: 15px;
+}
+
+.botao-acao {
+    padding: 12px 24px;
+    border-radius: 6px;
+    border: 1px solid #3498db;
+    background-color: #ffffff;
+    color: #3498db;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.botao-acao:hover {
+    background-color: #f0f7ff;
+}
+
+.botao-primario {
+    background-color: #3498db;
+    color: #ffffff;
+}
+
+.botao-primario:hover {
+    background-color: #2980b9;
+    border-color: #2980b9;
+}
+
+/* Tabela */
+.secao-tabela {
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.tabela-container {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.tabela-dados {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.tabela-dados th {
+    padding: 15px;
+    border-bottom: 2px solid #f0f0f0;
+    color: #777;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.tabela-dados td {
+    padding: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+    color: #444;
+}
+
+.tabela-dados tbody tr:hover {
+    background-color: #fafafa;
+}
+
+/* Etiquetas de Status */
+.etiqueta {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.status-andamento {
+    background-color: #fff9c4;
+    color: #f57f17;
+}
+
+.status-aberta {
+    background-color: #e3f2fd;
+    color: #1976d2;
+}
+
+.status-finalizada {
+    background-color: #e8f5e9;
+    color: #388e3c;
+}

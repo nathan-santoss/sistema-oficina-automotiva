@@ -1,0 +1,255 @@
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar (Menu Lateral) */
+.menu-lateral {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    position: fixed;
+    height: 100vh;
+}
+
+.logo-container {
+    padding: 30px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo-texto {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.destaque-logo {
+    color: #3498db;
+}
+
+.lista-navegacao {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.item-navegacao {
+    padding: 15px 25px;
+    color: #5f6368;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.item-ativo {
+    background-color: #e3f2fd;
+    color: #3498db;
+    border-left: 4px solid #3498db;
+}
+
+/* Container Principal */
+.container-principal {
+    margin-left: 260px;
+    flex: 1;
+}
+
+.cabecalho-superior {
+    height: 70px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.titulo-pagina {
+    font-size: 1.25rem;
+    color: #2c3e50;
+}
+
+/* Área de Usuário */
+.area-usuario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-usuario {
+    text-align: right;
+}
+
+.nome-usuario {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.funcao-usuario {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+.avatar-usuario {
+    width: 40px;
+    height: 40px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Conteúdo */
+.conteudo-principal {
+    padding: 30px;
+}
+
+.barra-ferramentas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.campo-filtro {
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    width: 300px;
+    outline: none;
+}
+
+.campo-filtro:focus {
+    border-color: #3498db;
+}
+
+.botao-novo-servico {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.botao-novo-servico:hover {
+    background-color: #2980b9;
+}
+
+/* Tabela */
+.secao-tabela {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabela-dados {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-dados th {
+    background-color: #fafafa;
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #7f8c8d;
+    border-bottom: 2px solid #eee;
+}
+
+.tabela-dados td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 0.9rem;
+    vertical-align: middle;
+}
+
+.texto-enfase {
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.texto-descricao {
+    color: #777;
+    max-width: 400px;
+}
+
+/* Badges de Status */
+.badge-status {
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+.status-ativo {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.status-inativo {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+/* Ações */
+.coluna-acoes {
+    text-align: right;
+}
+
+.botao-editar, .botao-desativar, .botao-ativar {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: white;
+    margin-left: 5px;
+    border: 1px solid #ddd;
+}
+
+.botao-editar:hover {
+    border-color: #3498db;
+    color: #3498db;
+}
+
+.botao-desativar {
+    color: #e74c3c;
+    border-color: #fab1a0;
+}
+
+.botao-desativar:hover {
+    background-color: #ffebee;
+}
+
+.botao-ativar {
+    color: #27ae60;
+    border-color: #a29bfe;
+}
+
+/* Rodapé */
+.rodape-catalogo {
+    padding: 15px 20px;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+}
+
+.contador {
+    font-size: 0.85rem;
+    color: #999;
+}

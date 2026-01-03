@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Cliente - Clima Car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="corpo-sistema">
+
+    <aside class="menu-lateral">
+        <div class="logo-container">
+            <h1 class="logo-texto">Clima <span class="destaque-logo">Car</span></h1>
+        </div>
+        <nav class="navegacao">
+            <ul class="lista-navegacao">
+                <li class="item-navegacao">Dashboard</li>
+                <li class="item-navegacao item-ativo">Clientes</li>
+                <li class="item-navegacao">Veículos</li>
+                <li class="item-navegacao">Ordens de Serviço</li>
+                <li class="item-navegacao">Serviços</li>
+                <li class="item-navegacao">Usuários</li>
+                <li class="item-navegacao">Backup</li>
+                <li class="item-navegacao">Configurações</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="container-principal">
+        <header class="cabecalho-superior">
+            <div class="caminho-navegacao">
+                <span class="link-voltar">Clientes</span> / <span class="pagina-atual">Detalhes do Cliente</span>
+            </div>
+            <div class="area-usuario">
+                <div class="info-usuario">
+                    <span class="nome-usuario">Ricardo Silva</span>
+                    <span class="funcao-usuario">Gerente Operacional</span>
+                </div>
+                <div class="avatar-usuario">RS</div>
+            </div>
+        </header>
+
+        <main class="conteudo-detalhado">
+            <div class="coluna-esquerda">
+                <section class="card-perfil-cliente">
+                    <div class="cabecalho-card">
+                        <div class="avatar-cliente-grande">CO</div>
+                        <div class="resumo-identificacao">
+                            <h2 class="nome-cliente-titulo">Carlos Eduardo Santos</h2>
+                            <span class="badge-tipo-cliente">Pessoa Física</span>
+                        </div>
+                    </div>
+                    
+                    <div class="grade-informacoes">
+                        <div class="bloco-info">
+                            <span class="legenda-info">CPF</span>
+                            <span class="dado-info">123.456.789-00</span>
+                        </div>
+                        <div class="bloco-info">
+                            <span class="legenda-info">E-mail</span>
+                            <span class="dado-info">carlos.santos@email.com</span>
+                        </div>
+                        <div class="bloco-info">
+                            <span class="legenda-info">Telefone Principal</span>
+                            <span class="dado-info">(11) 98888-7777</span>
+                        </div>
+                        <div class="bloco-info">
+                            <span class="legenda-info">Desde</span>
+                            <span class="dado-info">15/10/2023</span>
+                        </div>
+                    </div>
+
+                    <div class="endereco-cliente">
+                        <span class="legenda-info">Endereço</span>
+                        <p class="dado-info">Rua das Oficinas, 123 - Bairro Industrial, São Paulo - SP, 01234-567</p>
+                    </div>
+
+                    <div class="acoes-perfil">
+                        <button class="botao-editar-perfil">Editar Dados</button>
+                    </div>
+                </section>
+
+                <section class="secao-informativa">
+                    <div class="cabecalho-secao">
+                        <h3 class="titulo-secao-interna">Veículos Vinculados</h3>
+                        <button class="botao-adicionar-pequeno">+ Veículo</button>
+                    </div>
+                    <div class="lista-mini-cards">
+                        <div class="mini-card-veiculo">
+                            <div class="info-veiculo-texto">
+                                <span class="modelo-veiculo">VW Golf TSI 2018</span>
+                                <span class="placa-veiculo">ABC-1234</span>
+                            </div>
+                            <button class="botao-seta">></button>
+                        </div>
+                        <div class="mini-card-veiculo">
+                            <div class="info-veiculo-texto">
+                                <span class="modelo-veiculo">Fiat Uno Way 2020</span>
+                                <span class="placa-veiculo">XYZ-9876</span>
+                            </div>
+                            <button class="botao-seta">></button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="coluna-direita">
+                <section class="secao-informativa">
+                    <h3 class="titulo-secao-interna">Histórico de Ordens de Serviço</h3>
+                    <table class="tabela-historico">
+                        <thead>
+                            <tr>
+                                <th>OS nº</th>
+                                <th>Data</th>
+                                <th>Veículo</th>
+                                <th>Status</th>
+                                <th>Valor</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#2024-001</td>
+                                <td>03/01/2026</td>
+                                <td>VW Golf</td>
+                                <td><span class="status-os os-andamento">Em Aberto</span></td>
+                                <td>R$ 450,00</td>
+                            </tr>
+                            <tr>
+                                <td>#2023-885</td>
+                                <td>15/12/2025</td>
+                                <td>VW Golf</td>
+                                <td><span class="status-os os-paga">Paga</span></td>
+                                <td>R$ 1.200,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="secao-informativa">
+                    <h3 class="titulo-secao-interna">Imagens e Documentos</h3>
+                    <div class="grade-galeria">
+                        <div class="item-galeria-vazio">CNH Frente</div>
+                        <div class="item-galeria-vazio">CNH Verso</div>
+                        <div class="item-galeria-vazio">Comprovante</div>
+                        <div class="botao-upload-foto">+ Adicionar Foto</div>
+                    </div>
+                </section>
+
+                <section class="secao-informativa">
+                    <h3 class="titulo-secao-interna">Observações Gerais</h3>
+                    <div class="container-observacoes">
+                        <p class="texto-observacao">Cliente extremamente cuidadoso com o veículo. Prefere peças originais de fábrica. Costuma trazer o carro aos sábados pela manhã.</p>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

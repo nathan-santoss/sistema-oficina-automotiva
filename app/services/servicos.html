@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Serviços - Clima Car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="corpo-sistema">
+
+    <aside class="menu-lateral">
+        <div class="logo-container">
+            <h1 class="logo-texto">Clima <span class="destaque-logo">Car</span></h1>
+        </div>
+        <nav class="navegacao">
+            <ul class="lista-navegacao">
+                <li class="item-navegacao">Dashboard</li>
+                <li class="item-navegacao">Clientes</li>
+                <li class="item-navegacao">Veículos</li>
+                <li class="item-navegacao">Ordens de Serviço</li>
+                <li class="item-navegacao item-ativo">Serviços</li>
+                <li class="item-navegacao">Usuários</li>
+                <li class="item-navegacao">Backup</li>
+                <li class="item-navegacao">Configurações</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="container-principal">
+        <header class="cabecalho-superior">
+            <div class="titulo-pagina-container">
+                <h2 class="titulo-pagina">Catálogo de Serviços</h2>
+            </div>
+            <div class="area-usuario">
+                <div class="info-usuario">
+                    <span class="nome-usuario">Ricardo Silva</span>
+                    <span class="funcao-usuario">Gerente Operacional</span>
+                </div>
+                <div class="avatar-usuario">RS</div>
+            </div>
+        </header>
+
+        <main class="conteudo-principal">
+            
+            <section class="barra-ferramentas">
+                <div class="busca-servico">
+                    <input type="text" class="campo-filtro" placeholder="Filtrar serviços...">
+                </div>
+                <button class="botao-novo-servico">Novo Serviço</button>
+            </section>
+
+            <section class="secao-tabela">
+                <div class="tabela-container">
+                    <table class="tabela-dados">
+                        <thead>
+                            <tr>
+                                <th>Nome do Serviço</th>
+                                <th>Descrição</th>
+                                <th>Status</th>
+                                <th class="coluna-acoes">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="texto-enfase">Higienização de Ar Condicionado</td>
+                                <td class="texto-descricao">Limpeza completa do sistema com aplicação de ozônio e substituição de filtro.</td>
+                                <td><span class="badge-status status-ativo">Ativo</span></td>
+                                <td class="coluna-acoes">
+                                    <button class="botao-editar">Editar</button>
+                                    <button class="botao-desativar">Desativar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="texto-enfase">Carga de Gás R134a</td>
+                                <td class="texto-descricao">Recarga de fluido refrigerante seguindo especificações do fabricante.</td>
+                                <td><span class="badge-status status-ativo">Ativo</span></td>
+                                <td class="coluna-acoes">
+                                    <button class="botao-editar">Editar</button>
+                                    <button class="botao-desativar">Desativar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="texto-enfase">Troca de Compressor</td>
+                                <td class="texto-descricao">Substituição do compressor e limpeza interna da tubulação (flush).</td>
+                                <td><span class="badge-status status-ativo">Ativo</span></td>
+                                <td class="coluna-acoes">
+                                    <button class="botao-editar">Editar</button>
+                                    <button class="botao-desativar">Desativar</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="texto-enfase">Reparo em Mangueiras</td>
+                                <td class="texto-descricao">Conserto de vazamentos e crimpagem de novas conexões.</td>
+                                <td><span class="badge-status status-inativo">Inativo</span></td>
+                                <td class="coluna-acoes">
+                                    <button class="botao-editar">Editar</button>
+                                    <button class="botao-ativar">Ativar</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <footer class="rodape-catalogo">
+                    <span class="contador">4 serviços listados</span>
+                </footer>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

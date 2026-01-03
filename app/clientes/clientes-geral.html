@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima Car - Clientes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="corpo-sistema">
+
+    <aside class="menu-lateral">
+        <div class="logotipo-area">
+            <h2 class="logotipo-texto">Clima Car</h2>
+        </div>
+        <nav class="navegacao-principal">
+            <ul class="lista-menu">
+                <li><a href="#" class="link-menu">Dashboard</a></li>
+                <li><a href="#" class="link-menu link-ativo">Clientes</a></li>
+                <li><a href="#" class="link-menu">Veículos</a></li>
+                <li><a href="#" class="link-menu">Ordens de Serviço</a></li>
+                <li><a href="#" class="link-menu">Financeiro</a></li>
+                <li><a href="#" class="link-menu">Serviços</a></li>
+                <li><a href="#" class="link-menu">Backup</a></li>
+                <li><a href="#" class="link-menu">Configurações</a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="area-principal">
+        <header class="cabecalho-pagina">
+            <div class="bloco-titulo">
+                <h1 class="titulo-pagina">Clientes</h1>
+                <p class="subtitulo-pagina">Gerencie o cadastro de clientes e parceiros</p>
+            </div>
+            <div class="area-usuario">
+                <span class="nome-usuario">Ricardo Almeida</span>
+                <div class="avatar-usuario">RA</div>
+            </div>
+        </header>
+
+        <section class="barra-ferramentas">
+            <div class="grupo-busca">
+                <input type="text" class="campo-busca" placeholder="Buscar por nome, CPF ou telefone...">
+            </div>
+            <div class="grupo-acoes">
+                <button class="botao-primario">Novo Cliente</button>
+            </div>
+        </section>
+
+        <section class="secao-tabela">
+            <div class="container-tabela">
+                <table class="tabela-listagem">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Tipo</th>
+                            <th>CPF/CNPJ</th>
+                            <th>Telefone</th>
+                            <th class="coluna-acoes">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="celula-nome">Anderson Silva</td>
+                            <td><span class="etiqueta-tipo">PF</span></td>
+                            <td>123.456.789-00</td>
+                            <td>(11) 98888-7777</td>
+                            <td class="coluna-acoes">
+                                <button class="botao-tabela-editar">Editar</button>
+                                <button class="botao-tabela-visualizar">Ver</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="celula-nome">Oficina do Gás LTDA</td>
+                            <td><span class="etiqueta-tipo juridica">PJ</span></td>
+                            <td>00.111.222/0001-33</td>
+                            <td>(11) 3333-4444</td>
+                            <td class="coluna-acoes">
+                                <button class="botao-tabela-editar">Editar</button>
+                                <button class="botao-tabela-visualizar">Ver</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="celula-nome">Beatriz Cavalcante</td>
+                            <td><span class="etiqueta-tipo">PF</span></td>
+                            <td>987.654.321-11</td>
+                            <td>(11) 97777-6666</td>
+                            <td class="coluna-acoes">
+                                <button class="botao-tabela-editar">Editar</button>
+                                <button class="botao-tabela-visualizar">Ver</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="celula-nome">Transportadora Veloz</td>
+                            <td><span class="etiqueta-tipo juridica">PJ</span></td>
+                            <td>44.555.666/0001-77</td>
+                            <td>(11) 3222-1111</td>
+                            <td class="coluna-acoes">
+                                <button class="botao-tabela-editar">Editar</button>
+                                <button class="botao-tabela-visualizar">Ver</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="celula-nome">Carlos Eduardo Mendes</td>
+                            <td><span class="etiqueta-tipo">PF</span></td>
+                            <td>222.333.444-55</td>
+                            <td>(11) 91111-2222</td>
+                            <td class="coluna-acoes">
+                                <button class="botao-tabela-editar">Editar</button>
+                                <button class="botao-tabela-visualizar">Ver</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <footer class="rodape-tabela">
+                <p class="contagem-registros">Exibindo 5 de 142 clientes</p>
+                <div class="paginacao">
+                    <button class="botao-paginacao" disabled>Anterior</button>
+                    <button class="botao-paginacao ativo">1</button>
+                    <button class="botao-paginacao">2</button>
+                    <button class="botao-paginacao">3</button>
+                    <button class="botao-paginacao">Próximo</button>
+                </div>
+            </footer>
+        </section>
+    </main>
+
+</body>
+</html>

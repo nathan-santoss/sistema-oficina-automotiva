@@ -1,0 +1,238 @@
+/* Definições de Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Sidebar (Menu Lateral) */
+.menu-lateral {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    position: fixed;
+    height: 100vh;
+}
+
+.logo-container {
+    padding: 30px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo-texto {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.destaque-logo {
+    color: #3498db;
+}
+
+.lista-navegacao {
+    list-style: none;
+    padding: 20px 0;
+}
+
+.item-navegacao {
+    padding: 15px 25px;
+    color: #5f6368;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.item-ativo {
+    background-color: #e3f2fd;
+    color: #3498db;
+    border-left: 4px solid #3498db;
+}
+
+/* Container Principal */
+.container-principal {
+    margin-left: 260px;
+    flex: 1;
+}
+
+.cabecalho-superior {
+    height: 70px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.titulo-pagina {
+    font-size: 1.25rem;
+    color: #2c3e50;
+}
+
+/* Área de Usuário Topo */
+.area-usuario {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.info-usuario {
+    text-align: right;
+}
+
+.nome-usuario {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.funcao-usuario {
+    font-size: 0.75rem;
+    color: #777;
+}
+
+.avatar-usuario {
+    width: 40px;
+    height: 40px;
+    background-color: #3498db;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+/* Barra de Ações */
+.conteudo-principal {
+    padding: 30px;
+}
+
+.barra-ferramentas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.texto-informativo {
+    color: #7f8c8d;
+    font-size: 0.95rem;
+}
+
+.botao-novo-usuario {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.botao-novo-usuario:hover {
+    background-color: #2980b9;
+}
+
+/* Tabela de Usuários */
+.secao-tabela {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.tabela-dados {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-dados th {
+    background-color: #fafafa;
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #7f8c8d;
+    border-bottom: 2px solid #eee;
+}
+
+.tabela-dados td {
+    padding: 18px 20px;
+    border-bottom: 1px solid #f2f2f2;
+    font-size: 0.95rem;
+    vertical-align: middle;
+}
+
+.nome-enfase {
+    display: block;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 4px;
+}
+
+.coluna-login {
+    font-family: 'Courier New', Courier, monospace;
+    color: #34495e;
+    font-weight: bold;
+}
+
+/* Tags de Perfil */
+.tag-perfil {
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.perfil-admin { background-color: #e8f4fd; color: #3498db; }
+.perfil-tecnico { background-color: #fef9e7; color: #f1c40f; }
+.perfil-recepcao { background-color: #e8f8f5; color: #1abc9c; }
+
+/* Botões de Ação na Tabela */
+.coluna-acoes {
+    text-align: right;
+}
+
+.botao-tabela-editar, .botao-tabela-senha {
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: white;
+    border: 1px solid #ddd;
+    margin-left: 5px;
+    transition: 0.2s;
+}
+
+.botao-tabela-editar:hover {
+    border-color: #3498db;
+    color: #3498db;
+}
+
+.botao-tabela-senha:hover {
+    background-color: #f8f9fa;
+    border-color: #7f8c8d;
+}
+
+/* Rodapé */
+.rodape-lista {
+    padding: 15px 20px;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+}
+
+.contador-usuarios {
+    font-size: 0.85rem;
+    color: #999;
+}

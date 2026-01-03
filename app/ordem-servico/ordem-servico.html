@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordens de Serviço - Clima Car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="corpo-sistema">
+
+    <aside class="menu-lateral">
+        <div class="logo-container">
+            <h1 class="logo-texto">Clima <span class="destaque-logo">Car</span></h1>
+        </div>
+        <nav class="navegacao">
+            <ul class="lista-navegacao">
+                <li class="item-navegacao">Dashboard</li>
+                <li class="item-navegacao">Clientes</li>
+                <li class="item-navegacao">Veículos</li>
+                <li class="item-navegacao item-ativo">Ordens de Serviço</li>
+                <li class="item-navegacao">Serviços</li>
+                <li class="item-navegacao">Usuários</li>
+                <li class="item-navegacao">Backup</li>
+                <li class="item-navegacao">Configurações</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="container-principal">
+        <header class="cabecalho-superior">
+            <div class="titulo-pagina-container">
+                <h2 class="titulo-pagina">Ordens de Serviço</h2>
+            </div>
+            <div class="area-usuario">
+                <div class="info-usuario">
+                    <span class="nome-usuario">Ricardo Silva</span>
+                    <span class="funcao-usuario">Gerente Operacional</span>
+                </div>
+                <div class="avatar-usuario">RS</div>
+            </div>
+        </header>
+
+        <main class="conteudo-principal">
+            
+            <section class="barra-ferramentas">
+                <div class="filtros-status">
+                    <button class="botao-filtro filtro-ativo">Todas</button>
+                    <button class="botao-filtro">Abertas</button>
+                    <button class="botao-filtro">Em Andamento</button>
+                    <button class="botao-filtro">Finalizadas</button>
+                </div>
+                <button class="botao-nova-os">Nova Ordem de Serviço</button>
+            </section>
+
+            <section class="secao-tabela">
+                <div class="tabela-container">
+                    <table class="tabela-dados">
+                        <thead>
+                            <tr>
+                                <th>Número OS</th>
+                                <th>Cliente</th>
+                                <th>Veículo</th>
+                                <th>Status</th>
+                                <th>Data de Entrada</th>
+                                <th class="coluna-acoes">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="numero-os">#2026-0042</td>
+                                <td class="texto-enfase">Carlos Eduardo Santos</td>
+                                <td>VW Golf - ABC-1234</td>
+                                <td><span class="badge-status status-andamento">Em Andamento</span></td>
+                                <td>03/01/2026</td>
+                                <td class="coluna-acoes">
+                                    <button class="botao-acao-ver">Ver</button>
+                                    <button class="botao-acao-imprimir">Imprimir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="numero-os">#2026-0041</td>
+                                <td class="texto-enfase">Ana Souza</td>
+                                <td>Toyota Corolla - XYZ-9876</td>
+                                <td><span class="badge-status status-aberta">Aberta</span></td>
+                                <td>03/01/2026</td>
+                                <td class="coluna-acoes">
+                                    <button class="botao-acao-ver">Ver</button>
+                                    <button class="botao-acao-imprimir">Imprimir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="numero-os">#2026-0038</td>
+                                <td class="texto-enfase">Juliana Costa</td>
+                                <td>Honda Civic - KJH-4455</td>
+                                <td><span class="badge-status status-finalizada">Finalizada</span></td>
+                                <td>02/01/2026</td>
+                                <td class="coluna-acoes">
+                                    <button class="botao-acao-ver">Ver</button>
+                                    <button class="botao-acao-imprimir">Imprimir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="numero-os">#2026-0035</td>
+                                <td class="texto-enfase">Marcos Oliveira</td>
+                                <td>Fiat Uno - OOO-0000</td>
+                                <td><span class="badge-status status-finalizada">Finalizada</span></td>
+                                <td>30/12/2025</td>
+                                <td class="coluna-acoes">
+                                    <button class="botao-acao-ver">Ver</button>
+                                    <button class="botao-acao-imprimir">Imprimir</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="numero-os">#2026-0032</td>
+                                <td class="texto-enfase">Transportadora Veloz</td>
+                                <td>Ford Ranger - LMP-1020</td>
+                                <td><span class="badge-status status-cancelada">Cancelada</span></td>
+                                <td>28/12/2025</td>
+                                <td class="coluna-acoes">
+                                    <button class="botao-acao-ver">Ver</button>
+                                    <button class="botao-acao-imprimir">Imprimir</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <footer class="rodape-tabela">
+                    <div class="legenda-rapida">
+                        <span class="legenda-item"><span class="ponto status-aberta"></span> Aberta</span>
+                        <span class="legenda-item"><span class="ponto status-andamento"></span> Em Andamento</span>
+                        <span class="legenda-item"><span class="ponto status-finalizada"></span> Finalizada</span>
+                    </div>
+                    <div class="paginacao">
+                        <button class="item-paginacao">Anterior</button>
+                        <button class="item-paginacao paginacao-selecionada">1</button>
+                        <button class="item-paginacao">2</button>
+                        <button class="item-paginacao">Próximo</button>
+                    </div>
+                </footer>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

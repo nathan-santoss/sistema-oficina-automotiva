@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuários - Clima Car</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="corpo-sistema">
+
+    <aside class="menu-lateral">
+        <div class="logo-container">
+            <h1 class="logo-texto">Clima <span class="destaque-logo">Car</span></h1>
+        </div>
+        <nav class="navegacao">
+            <ul class="lista-navegacao">
+                <li class="item-navegacao">Dashboard</li>
+                <li class="item-navegacao">Clientes</li>
+                <li class="item-navegacao">Veículos</li>
+                <li class="item-navegacao">Ordens de Serviço</li>
+                <li class="item-navegacao">Serviços</li>
+                <li class="item-navegacao item-ativo">Usuários</li>
+                <li class="item-navegacao">Backup</li>
+                <li class="item-navegacao">Configurações</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <div class="container-principal">
+        <header class="cabecalho-superior">
+            <div class="titulo-pagina-container">
+                <h2 class="titulo-pagina">Gerenciamento de Usuários</h2>
+            </div>
+            <div class="area-usuario">
+                <div class="info-usuario">
+                    <span class="nome-usuario">Ricardo Silva</span>
+                    <span class="funcao-usuario">Gerente Operacional</span>
+                </div>
+                <div class="avatar-usuario">RS</div>
+            </div>
+        </header>
+
+        <main class="conteudo-principal">
+            
+            <section class="barra-ferramentas">
+                <div class="informativo-usuarios">
+                    <p class="texto-informativo">Gerencie as permissões e contas dos colaboradores.</p>
+                </div>
+                <button class="botao-novo-usuario">Novo Usuário</button>
+            </section>
+
+            <section class="secao-tabela">
+                <div class="tabela-container">
+                    <table class="tabela-dados">
+                        <thead>
+                            <tr>
+                                <th>Nome Completo</th>
+                                <th>Login / Usuário</th>
+                                <th class="coluna-acoes">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="coluna-nome">
+                                    <span class="nome-enfase">Ricardo Silva</span>
+                                    <span class="tag-perfil perfil-admin">Administrador</span>
+                                </td>
+                                <td class="coluna-login">ricardo.clima</td>
+                                <td class="coluna-acoes">
+                                    <button class="botao-tabela-editar">Editar</button>
+                                    <button class="botao-tabela-senha">Resetar Senha</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="coluna-nome">
+                                    <span class="nome-enfase">Jorge Oliveira</span>
+                                    <span class="tag-perfil perfil-tecnico">Técnico</span>
+                                </td>
+                                <td class="coluna-login">jorge.oficina</td>
+                                <td class="coluna-acoes">
+                                    <button class="botao-tabela-editar">Editar</button>
+                                    <button class="botao-tabela-senha">Resetar Senha</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="coluna-nome">
+                                    <span class="nome-enfase">Beatriz Souza</span>
+                                    <span class="tag-perfil perfil-recepcao">Recepção</span>
+                                </td>
+                                <td class="coluna-login">beatriz.atendimento</td>
+                                <td class="coluna-acoes">
+                                    <button class="botao-tabela-editar">Editar</button>
+                                    <button class="botao-tabela-senha">Resetar Senha</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="coluna-nome">
+                                    <span class="nome-enfase">Marcos Silva</span>
+                                    <span class="tag-perfil perfil-tecnico">Técnico</span>
+                                </td>
+                                <td class="coluna-login">marcos.aux</td>
+                                <td class="coluna-acoes">
+                                    <button class="botao-tabela-editar">Editar</button>
+                                    <button class="botao-tabela-senha">Resetar Senha</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <footer class="rodape-lista">
+                    <span class="contador-usuarios">Total: 4 usuários ativos</span>
+                </footer>
+            </section>
+        </main>
+    </div>
+
+</body>
+</html>

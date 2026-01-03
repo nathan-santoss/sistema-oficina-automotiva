@@ -1,0 +1,318 @@
+/* Reset e Estrutura Principal */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+}
+
+/* Sidebar (Consistência com as outras páginas) */
+.menu-lateral {
+    width: 260px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    position: fixed;
+    height: 100vh;
+}
+
+.logo-container {
+    padding: 30px 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.logo-texto {
+    font-size: 1.5rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.destaque-logo { color: #3498db; }
+
+.lista-navegacao { list-style: none; padding: 20px 0; }
+
+.item-navegacao {
+    padding: 15px 25px;
+    color: #5f6368;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.item-ativo {
+    background-color: #e3f2fd;
+    color: #3498db;
+    border-left: 4px solid #3498db;
+}
+
+/* Header e Navegação */
+.container-principal {
+    margin-left: 260px;
+    flex: 1;
+}
+
+.cabecalho-superior {
+    height: 70px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+.caminho-navegacao {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+.link-voltar { color: #3498db; cursor: pointer; }
+
+.pagina-atual { font-weight: 600; color: #333; }
+
+.area-usuario { display: flex; align-items: center; gap: 15px; }
+
+.info-usuario { text-align: right; }
+
+.nome-usuario { display: block; font-size: 0.9rem; font-weight: 600; }
+
+.funcao-usuario { font-size: 0.75rem; color: #777; }
+
+.avatar-usuario {
+    width: 40px; height: 40px;
+    background-color: #3498db; color: white;
+    border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold;
+}
+
+/* Layout do Conteúdo de Detalhes */
+.conteudo-detalhado {
+    padding: 30px;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: 30px;
+}
+
+/* Coluna da Esquerda (Perfil e Veículos) */
+.card-perfil-cliente {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.cabecalho-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.avatar-cliente-grande {
+    width: 60px;
+    height: 60px;
+    background-color: #ecf0f1;
+    color: #7f8c8d;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nome-cliente-titulo {
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.badge-tipo-cliente {
+    font-size: 0.75rem;
+    background-color: #e8f4fd;
+    color: #3498db;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: 600;
+}
+
+.grade-informacoes {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.legenda-info {
+    display: block;
+    font-size: 0.75rem;
+    color: #999;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+}
+
+.dado-info {
+    font-size: 0.95rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.endereco-cliente {
+    padding-top: 15px;
+    border-top: 1px solid #f0f0f0;
+    margin-bottom: 20px;
+}
+
+.acoes-perfil {
+    text-align: center;
+}
+
+.botao-editar-perfil {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3498db;
+    background: white;
+    color: #3498db;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.botao-editar-perfil:hover { background-color: #3498db; color: white; }
+
+/* Seções Informativas */
+.secao-informativa {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.cabecalho-secao {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.titulo-secao-interna {
+    font-size: 1rem;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.botao-adicionar-pequeno {
+    background: none;
+    border: 1px dashed #3498db;
+    color: #3498db;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* Lista de Veículos */
+.mini-card-veiculo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    background-color: #fcfcfc;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.modelo-veiculo { display: block; font-size: 0.9rem; font-weight: 600; }
+
+.placa-veiculo { font-size: 0.8rem; color: #777; }
+
+.botao-seta {
+    background: none; border: none; color: #bdc3c7; font-weight: bold; cursor: pointer;
+}
+
+/* Tabela Histórico */
+.tabela-historico {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabela-historico th {
+    text-align: left;
+    font-size: 0.8rem;
+    color: #999;
+    padding: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.tabela-historico td {
+    padding: 12px 10px;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.status-os {
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+.os-andamento { background: #fff9c4; color: #f57f17; }
+
+.os-paga { background: #e8f5e9; color: #388e3c; }
+
+/* Galeria */
+.grade-galeria {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.item-galeria-vazio {
+    height: 100px;
+    background: #f8f9fa;
+    border: 1px dashed #ddd;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: #aaa;
+    text-align: center;
+}
+
+.botao-upload-foto {
+    height: 100px;
+    background: #e3f2fd;
+    color: #3498db;
+    border: 1px dashed #3498db;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+/* Observações */
+.container-observacoes {
+    background: #fffdf0;
+    padding: 15px;
+    border-left: 4px solid #f1c40f;
+    border-radius: 4px;
+}
+
+.texto-observacao {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: #555;
+}
