@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clima Car - Configurações do Sistema</title>
+    <title>Clima Car - Backup e Restauração</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="corpo-sistema">
@@ -29,7 +29,7 @@
     <div class="container-principal">
         <header class="cabecalho-superior">
             <div class="titulo-pagina-container">
-                <h2 class="titulo-pagina">Configurações do Sistema</h2>
+                <h2 class="titulo-pagina">Backup e Restauração</h2>
             </div>
             <div class="area-usuario">
                 <div class="info-usuario">
@@ -42,51 +42,46 @@
 
         <main class="conteudo-principal">
             
-            <section class="secao-configuracoes">
-                <div class="cartao-configuracao">
-                    <h3 class="titulo-secao-interna">Dados da Oficina</h3>
-                    <div class="formulario-grupo">
-                        <label class="rotulo-campo">Nome da Oficina (Razão Social)</label>
-                        <input type="text" class="campo-texto" placeholder="Ex: Clima Car Manutenção Automotiva LTDA">
-                    </div>
-                    <div class="formulario-grupo">
-                        <label class="rotulo-campo">Nome Fantasia</label>
-                        <input type="text" class="campo-texto" placeholder="Ex: Clima Car">
-                    </div>
-                    <div class="formulario-grupo">
-                        <label class="rotulo-campo">CNPJ</label>
-                        <input type="text" class="campo-texto campo-somente-leitura" value="12.345.678/0001-90" readonly>
-                    </div>
+            <section class="cartao-backup">
+                <h3 class="titulo-secao">Backup Automático</h3>
+                <p class="texto-informativo">
+                    O sistema realiza cópias de segurança automáticas todos os dias às 22:00. 
+                    Esses arquivos são armazenados localmente e na nuvem para garantir a integridade dos seus dados.
+                </p>
+                <div class="info-status">
+                    <span class="rotulo-status">Último backup realizado:</span>
+                    <span class="valor-status">02/01/2026 às 22:00:04</span>
+                </div>
+            </section>
+
+            <section class="cartao-backup">
+                <h3 class="titulo-secao">Backup Manual</h3>
+                <p class="texto-informativo">
+                    Recomendamos a criação de um backup manual antes de grandes atualizações ou manutenções no sistema.
+                </p>
+                <button class="botao-acao-principal">Criar Backup Agora</button>
+            </section>
+
+            <section class="cartao-backup area-restauracao">
+                <h3 class="titulo-secao">Restauração de Dados</h3>
+                <p class="texto-informativo">
+                    Selecione um arquivo de backup anterior para restaurar o banco de dados do sistema.
+                </p>
+                
+                <div class="bloco-alerta">
+                    <strong class="titulo-alerta">Atenção: Ação Irreversível</strong>
+                    <p class="mensagem-alerta">
+                        Todos os dados atuais serão apagados e substituídos pelo conteúdo do backup selecionado. 
+                        Certifique-se de que escolheu o arquivo correto.
+                    </p>
                 </div>
 
-                <div class="cartao-configuracao">
-                    <h3 class="titulo-secao-interna">Identidade Visual</h3>
-                    <p class="descricao-informativa">Esta logo será utilizada em impressões de Ordens de Serviço e relatórios.</p>
-                    <div class="area-upload-logo">
-                        <div class="previa-logo">
-                            <span class="texto-placeholder-logo">Sua Logo</span>
-                        </div>
-                        <div class="controles-upload">
-                            <button class="botao-secundario">Selecionar Imagem</button>
-                            <span class="info-arquivo">Formatos: PNG ou JPG (Máx. 2MB)</span>
-                        </div>
-                    </div>
+                <div class="acoes-restauracao">
+                    <button class="botao-acao-critica">Restaurar Backup</button>
                 </div>
-
-                <div class="cartao-configuracao">
-                    <h3 class="titulo-secao-interna">Sistema</h3>
-                    <div class="formulario-grupo">
-                        <label class="rotulo-campo">Caminho da Pasta de Backup</label>
-                        <input type="text" class="campo-texto campo-somente-leitura" value="C:\ClimaCar\Dados\Backups\" readonly>
-                    </div>
-                    <div class="versao-container">
-                        <span class="rotulo-versao">Versão do Sistema:</span>
-                        <span class="tag-versao">v2.4.0-estável</span>
-                    </div>
-                </div>
-
-                <div class="acoes-configuracao">
-                    <button class="botao-salvar">Salvar Alterações</button>
+                
+                <div class="nota-confirmacao">
+                    <p class="texto-nota">* O sistema solicitará a senha de administrador para validar qualquer restauração.</p>
                 </div>
             </section>
 
