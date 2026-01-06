@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clima Car - Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="corpo-sistema">
+
+    <aside class="menu-lateral">
+        <div class="logo-container">
+            <h1 class="logo-texto">Clima <span class="destaque-logo">Car</span></h1>
+        </div>
+        <nav class="navegacao">
+            <ul class="lista-navegacao" id="menu-navegacao">
+                <li class="item-navegacao item-ativo" data-page="home">Dashboard</li>
+                <li class="item-navegacao" data-page="clientes">Clientes</li>
+                <li class="item-navegacao" data-page="veiculos">Veículos</li>
+                <li class="item-navegacao" data-page="os">Ordens de Serviço</li>
+                <li class="item-navegacao" data-page="services">Serviços</li>
+                <li class="item-navegacao" data-page="users">Usuários</li>
+                <li class="item-navegacao" data-page="backup">Backup</li>
+                <li class="item-navegacao" data-page="config">Configurações</li>
+            </ul>
+        </nav>
+    </aside>
+
+    <main class="area-principal">
+
+        <header class="cabecalho-pagina">
+            <div>
+                <h1 class="titulo-pagina">Novo Cadastro</h1>
+                <p class="subtitulo-pagina">Cliente e veículo vinculados</p>
+            </div>
+            <div class="area-usuario">
+                <span class="nome-usuario">Ricardo Almeida</span>
+                <div class="avatar-usuario">RA</div>
+            </div>
+        </header>
+
+        <section class="secao-formulario">
+
+            <!-- DADOS DO CLIENTE -->
+            <div class="card-formulario">
+                <header class="cabecalho-card">
+                    <h2 class="titulo-card">Dados do Cliente</h2>
+                    <p class="descricao-card">Informações do responsável pelo veículo</p>
+                </header>
+
+                <div class="grupo-formulario">
+                    <div class="linha-formulario">
+                        <div class="campo-grupo">
+                            <label class="rotulo">Tipo</label>
+                            <select class="campo">
+                                <option>Pessoa Física</option>
+                                <option>Pessoa Jurídica</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label class="rotulo"">Nome / Razão Social</label>
+                            <input id="name" type="text" class="campo" placeholder="Nome completo ou empresa">
+                        </div>
+                    </div>
+
+                    <div class="linha-formulario">
+                        <div class="campo-grupo">
+                            <label class="rotulo">CPF / CNPJ</label>
+                            <input id="cpf-cnpj" type="text" class="campo">
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label class="rotulo">Telefone</label>
+                            <input id="telefone" type="text" class="campo">
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label class="rotulo">E-mail</label>
+                            <input id="email" type="email" class="campo">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DADOS DO VEÍCULO -->
+            <div class="card-formulario">
+                <header class="cabecalho-card">
+                    <h2 class="titulo-card">Dados do Veículo</h2>
+                    <p class="descricao-card">Veículo atendido pela oficina</p>
+                </header>
+
+                <div class="grupo-formulario" id="formulario">
+                    <div class="linha-formulario">
+                        <div class="campo-grupo">
+                            <label class="rotulo">Marca</label>
+                            <input id="vel-marca" type="text" class="campo" placeholder="Ex: Fiat">
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label class="rotulo">Modelo</label>
+                            <input id="vel-modelo" type="text" class="campo" placeholder="Ex: Argo">
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label class="rotulo">Ano</label>
+                            <input id="vel-ano" type="text" class="campo" placeholder="Ex: 2020">
+                        </div>
+                    </div>
+
+                    <div class="linha-formulario">
+                        <div class="campo-grupo">
+                            <label class="rotulo">Placa</label>
+                            <input id="vel-placa" type="text" class="campo">
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label class="rotulo">Tipo de Ar</label>
+                            <select id="cambio" class="campo">
+                                <option>Manual</option>
+                                <option>Automático</option>
+                                <option>Digital</option>
+                            </select>
+                        </div>
+
+                        <div class="campo-grupo">
+                            <label class="rotulo">Gás</label>
+                            <select id="gas-tipo" class="campo">
+                                <option>R134a</option>
+                                <option>R1234yf</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="linha-formulario">
+                        <div class="campo-grupo">
+                            <label class="rotulo">Observações</label>
+                            <textarea id="observacoes" class="campo campo-textarea"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AÇÕES -->
+            <footer class="acoes-formulario">
+                <button class="botao-secundario">Cancelar</button>
+                <button id="save" class="botao-primario">Salvar Cadastro</button>
+            </footer>
+
+        </section>
+
+    </main>
+    <script src="renderer.js"></script>
+    <script src="../../renderer-nav.js"></script>
+</body>
+</html>
